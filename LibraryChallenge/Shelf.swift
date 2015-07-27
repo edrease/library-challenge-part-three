@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Shelf {
+class Shelf: NSObject, NSCoding {
   
 
   let nameOfShelf: String
@@ -26,6 +26,16 @@ class Shelf {
     for book in booksOnShelf {
       println(book.title)
     }
+  }
+  
+  required init(coder aDecoder: NSCoder) {
+    nameOfShelf = aDecoder.decodeObjectForKey("nameOfShelf") as! String
+    booksOnShelf = aDecoder.decodeObjectForKey("booksOnShelf") as! [Book]
+  }
+  
+  func encodeWithCoder(aCoder: NSCoder) {
+    aCoder.encodeObject(nameOfShelf, forKey: "nameOfShelf")
+    aCoder.encodeObject(booksOnShelf, forKey: "booksOnShelf")
   }
 
 }

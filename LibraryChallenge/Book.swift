@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Book {
+class Book: NSObject, NSCoding {
   
-  let title: String
+  var title: String
   
   init(title: String) {
     self.title = title
@@ -23,6 +23,15 @@ class Book {
   func unshelf (shelfToRemoveFrom: Shelf) {
     shelfToRemoveFrom.booksOnShelf.removeLast()
   }
+  
+  required init(coder aDecoder: NSCoder) {
+    title = aDecoder.decodeObjectForKey("title") as! String
+  }
+  
+  func encodeWithCoder(aCoder: NSCoder) {
+    aCoder.encodeObject(title, forKey: "title")
+  }
+  
 }
 
 

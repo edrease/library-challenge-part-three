@@ -14,9 +14,10 @@ class LibraryViewController: UIViewController, UITableViewDataSource {
   var seattleLibrary = Library(libraryName: "Seattle Public")
   var puyallupLibrary = Library(libraryName: "Puyallup Library")
   var fictionShelf = Shelf(nameOfShelf: "Fiction")
-  let bookOne = Book(title: "Call of the Wild")
-  let bookTwo = Book(title: "The Shining")
+  var bookOne = Book(title: "Call of the Wild")
+  var bookTwo = Book(title: "The Shining")
   var staffPicksShelf = Shelf(nameOfShelf: "Staff Picks")
+  var alexandriaLibrary = Library(libraryName: "Alexandria")
   
   @IBOutlet weak var tableView: UITableView!
   
@@ -25,6 +26,7 @@ class LibraryViewController: UIViewController, UITableViewDataSource {
     tableView.dataSource = self
     libraries.append(seattleLibrary)
     libraries.append(puyallupLibrary)
+    libraries.append(alexandriaLibrary)
     bookOne.enshelf(fictionShelf)
     bookTwo.enshelf(fictionShelf)
     bookTwo.unshelf(fictionShelf)

@@ -16,6 +16,7 @@
 		9E42C91C1B43695500A85B61 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E42C91B1B43695500A85B61 /* Library.swift */; };
 		9E42C91E1B436A8100A85B61 /* Shelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E42C91D1B436A8100A85B61 /* Shelf.swift */; };
 		9E42C9201B436AC000A85B61 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E42C91F1B436AC000A85B61 /* Book.swift */; };
+		9E5AC4FC1B5C741F000C9656 /* BookEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5AC4FB1B5C741F000C9656 /* BookEditingViewController.swift */; };
 		9E939E8D1B54E7F600D643EC /* ShelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E939E8C1B54E7F600D643EC /* ShelfViewController.swift */; };
 		9E9B152A1B573265000DB0F9 /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9B15291B573265000DB0F9 /* BookViewController.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		9E42C91B1B43695500A85B61 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		9E42C91D1B436A8100A85B61 /* Shelf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shelf.swift; sourceTree = "<group>"; };
 		9E42C91F1B436AC000A85B61 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		9E5AC4FB1B5C741F000C9656 /* BookEditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookEditingViewController.swift; sourceTree = "<group>"; };
 		9E939E8C1B54E7F600D643EC /* ShelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShelfViewController.swift; sourceTree = "<group>"; };
 		9E9B15291B573265000DB0F9 /* BookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 				9E42C8FA1B43675D00A85B61 /* LibraryViewController.swift */,
 				9E939E8C1B54E7F600D643EC /* ShelfViewController.swift */,
 				9E9B15291B573265000DB0F9 /* BookViewController.swift */,
+				9E5AC4FB1B5C741F000C9656 /* BookEditingViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5AC4FC1B5C741F000C9656 /* BookEditingViewController.swift in Sources */,
 				9E42C91E1B436A8100A85B61 /* Shelf.swift in Sources */,
 				9E42C8FB1B43675D00A85B61 /* LibraryViewController.swift in Sources */,
 				9E42C8F91B43675D00A85B61 /* AppDelegate.swift in Sources */,
