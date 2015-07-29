@@ -12,7 +12,6 @@ class ShelfViewController: UIViewController, UITableViewDataSource {
   
   var selectedLibrary: Library!
   
-  
   @IBOutlet weak var tableView: UITableView!
 
   override func viewDidLoad() {
@@ -39,6 +38,8 @@ class ShelfViewController: UIViewController, UITableViewDataSource {
           let selectedRow = indexPath.row
           let selectedShelf = selectedLibrary.shelvesInLibrary[selectedRow]
           bookViewController.selectedShelf = selectedShelf
+          let parentLibrary = selectedLibrary
+          bookViewController.parentLibrary = parentLibrary
         }
       }
     }

@@ -11,6 +11,7 @@ import UIKit
 class BookViewController: UIViewController, UITableViewDataSource {
   
   var selectedShelf: Shelf!
+  var parentLibrary: Library!
   
 
   @IBOutlet weak var tableView: UITableView!
@@ -29,8 +30,8 @@ class BookViewController: UIViewController, UITableViewDataSource {
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-    tableView.reloadData()
     saveToArchive()
+    tableView.reloadData()
   }
   
   override func viewWillDisappear(animated: Bool) {
@@ -74,13 +75,18 @@ class BookViewController: UIViewController, UITableViewDataSource {
   
   func saveToArchive() {
     if let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last as? String {
-      NSKeyedArchiver.archiveRootObject(selectedShelf.booksOnShelf, toFile: documentsPath + "/archive")
+     let result = NSKeyedArchiver.archiveRootObject(selectedShelf.booksOnShelf, toFile: documentsPath + "/\(parentLibrary.libraryName)-\(selectedShelf.nameOfShelf)-archive")
+      if result == true {
+        println("save worked")
+      } else {
+        println("save didnt work")
+      }
     }
   }
   
   func loadFromArchive() -> [Book]? {
     if let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).last as? String {
-      if let booksListFromArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath + "/archive") as? [Book] {
+      if let booksListFromArchive = NSKeyedUnarchiver.unarchiveObjectWithFile(documentsPath + "/\(parentLibrary.libraryName)-\(selectedShelf.nameOfShelf)-archive") as? [Book] {
         return booksListFromArchive
       }
     }

@@ -27,18 +27,23 @@ class BookEditingViewController: UIViewController, UITextFieldDelegate {
       self.title = "Add Book"
     }
   }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    if selectedBook != nil {
+      selectedBook.title = bookEditingTextField.text
+    } else {
+      if bookEditingTextField.text != "" {
+      var newBook = Book(title: bookEditingTextField.text)
+      shelfToAddTo.booksOnShelf.append(newBook)
+      }
+    }
+  }
 
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     return false
   }
-  
-  func textFieldDidEndEditing(textField: UITextField) {
-    if selectedBook != nil {
-      selectedBook.title = textField.text
-    } else {
-      var newBook = Book(title: textField.text)
-      shelfToAddTo.booksOnShelf.append(newBook)
-    }
-  }
+
 }

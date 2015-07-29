@@ -17,6 +17,7 @@ class LibraryViewController: UIViewController, UITableViewDataSource {
   var bookOne = Book(title: "Call of the Wild")
   var bookTwo = Book(title: "The Shining")
   var staffPicksShelf = Shelf(nameOfShelf: "Staff Picks")
+  var staffPickShelfSeattle = Shelf(nameOfShelf: "Staff Picks")
   var alexandriaLibrary = Library(libraryName: "Alexandria")
   
   @IBOutlet weak var tableView: UITableView!
@@ -33,11 +34,16 @@ class LibraryViewController: UIViewController, UITableViewDataSource {
     fictionShelf.addShelfToLibrary(seattleLibrary)
     fictionShelf.listBooks()
     seattleLibrary.listShelves()
-    staffPicksShelf.addShelfToLibrary(seattleLibrary)
+    staffPickShelfSeattle.addShelfToLibrary(seattleLibrary)
     bookTwo.enshelf(staffPicksShelf)
     seattleLibrary.listShelves()
     seattleLibrary.listBooksInLibrary()
     staffPicksShelf.addShelfToLibrary(puyallupLibrary)
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.tableView.reloadData()
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
